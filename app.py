@@ -17,7 +17,7 @@ with st.sidebar:
 st.title("Choose your favorite cat :cat:")
 st.caption("You can display the image in full size by hovering it and clicking the double arrow")
 
-cat_images = [requests.get("https://cataas.com/cat?width=400&height=400").content for i in range(n_photos)]
+cat_images = [requests.get(f"{ENDPOINT}?width=1200&height=1200").content for i in range(n_photos)]
 n_rows = 1 + len(cat_images) // n_cols
 rows = [st.beta_container() for _ in range(n_rows)]
 cols_per_row = [r.beta_columns(n_cols) for r in rows]
