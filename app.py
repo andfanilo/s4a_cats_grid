@@ -7,7 +7,7 @@ N_COLS = 4
 
 with st.sidebar:
     st.header("Configuration")
-    n_photos = st.slider("Number of cat photos:", 4, 32, 16)
+    n_photos = st.slider("Number of cat photos:", 4, 64, 16)
     with st.beta_expander("About this app"):
         st.markdown("It's about cats :cat:!")
     st.caption("Source: https://cataas.com/#/")
