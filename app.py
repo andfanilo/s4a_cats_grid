@@ -25,6 +25,7 @@ cat_images = [
 n_rows = 1 + len(cat_images) // int(n_cols)
 rows = [st.container() for _ in range(n_rows)]
 cols_per_row = [r.columns(n_cols) for r in rows]
+cols = [column for row in cols_per_row for column in row]
 
 for image_index, cat_image in enumerate(cat_images):
-    cols_per_row[image_index // n_cols][image_index % n_cols].image(cat_image)
+    cols[image_index].image(cat_image)
