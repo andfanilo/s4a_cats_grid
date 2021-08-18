@@ -19,8 +19,8 @@ st.caption("You can display the image in full size by hovering it and clicking t
 
 cat_images = [requests.get(f"{ENDPOINT}?width=1200&height=1200").content for i in range(n_photos)]
 n_rows = 1 + len(cat_images) // n_cols
-rows = [st.beta_container() for _ in range(n_rows)]
-cols_per_row = [r.beta_columns(n_cols) for r in rows]
+rows = [st.container() for _ in range(n_rows)]
+cols_per_row = [r.columns(n_cols) for r in rows]
 
 for image_index, cat_image in enumerate(cat_images):
     with rows[image_index // n_cols]:
